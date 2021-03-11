@@ -55,7 +55,7 @@ struct bitmap_bitfields
 };
 #pragma pack(pop)
 
-int StringToInt(  // function will return 0 if non digit string is passed;
+int StringToInt( 	// function will return 0 if non digit string is passed;
 	char *String,   // pointer to the char array
 	int ReadFrom,   // Position to read from
 	int ReadTo	    // Position to read to, including. Pass in negative number to read to the end
@@ -103,6 +103,7 @@ void Print(char *String)
 	DWORD BytesWritten;
 	WriteFile(OutputHandle, String, StringLength, &BytesWritten, nullptr);
 }
+
 void mstrcat(char* destination, const char* source)
 {
 	// make ptr point to the end of destination string
@@ -190,11 +191,6 @@ void mstrcat(char* destination, const char* source)
 			case WM_CLOSE:
 			{
 				Running = false;
-				break;
-			}
-			case WM_ACTIVATEAPP:
-			{
-				//OutputDebugStringA("WM_ACTIVATEAPP");
 				break;
 			}
 			default:
