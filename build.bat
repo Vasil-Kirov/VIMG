@@ -1,5 +1,7 @@
 @echo off
 
+REM NOTE: This build file uses flags for release, remove SwitchFlags if you don't want to build for that.
+
 SET SwitchFlags=/O2 /D INTERNAL=0
 SET SourceFile=%CD%\code\main.cpp
 SET CompilerFlags= /nologo /fp:fast /fp:except- /EHa- /GR- /GS- /Gs9999999 /Fe:"VIMG.exe"
