@@ -104,6 +104,7 @@ void Print(char *String)
 	WriteFile(OutputHandle, String, StringLength, &BytesWritten, nullptr);
 }
 
+// strcat function so I don't have to include <string.h>
 void mstrcat(char* destination, const char* source)
 {
 	// make ptr point to the end of destination string
@@ -279,10 +280,11 @@ INT WinMain(HINSTANCE Instance, HINSTANCE PrevInstance,
 	}
 	// Reading from settings over!
 
-	HRESULT Result;
-	
-	char *CommandLine = GetCommandLineA();
-	char *Identifier;
+    HRESULT Result;
+
+    // Parsing the command line
+    char *CommandLine = GetCommandLineA();
+    char *Identifier;
     long IdentifierLength;
     
     char *Scan = CommandLine;
@@ -317,13 +319,13 @@ INT WinMain(HINSTANCE Instance, HINSTANCE PrevInstance,
     
     char FileName[512];
     memcpy(FileName, Identifier, IdentifierLength);
-	FileName[IdentifierLength] = 0;
+    FileName[IdentifierLength] = 0;
 
-	int bytesPerPixel;
-	ImagePixels = stbi_load(FileName, &ImgWidth, &ImgHeight, &bytesPerPixel, 0);
-	if(ImagePixels == NULL) return 1;
+    int bytesPerPixel;
+    ImagePixels = stbi_load(FileName, &ImgWidth, &ImgHeight, &bytesPerPixel, 0);
+    if(ImagePixels == NULL) return 1;
 
-  // Changing the RGB from stbi_load to a BGR for Windows.
+  	// Changing the RGB from stbi_load to a BGR for Windows.
 	{
 		unsigned int PixelCount = ImgWidth * ImgHeight; 
 		if(bytesPerPixel == 3)
@@ -356,7 +358,7 @@ INT WinMain(HINSTANCE Instance, HINSTANCE PrevInstance,
 		}
 	}
 
-  // Getting DIB info
+  	// Getting DIB info
 	bitmap_header bitmapHeader;
 	{
 			bitmapHeader.InfoSize = sizeof(bitmap_header);
@@ -390,6 +392,7 @@ INT WinMain(HINSTANCE Instance, HINSTANCE PrevInstance,
 		HWND WindowHandle = CreateWindowExA(0, WindowClass.lpszClassName, "VIMG", WS_OVERLAPPEDWINDOW | WS_VISIBLE, 0, 0, res.Width, res.Height, 0, 0, Instance, 0);
 		if(WindowHandle)
 		{
+			// Creating the DIB info for use in MainWindowCallback
 			DIB = {};
 			memcpy(&DIB.bmiHeader, bitmapHeaderPtr, sizeof(bitmap_header));
 			DIB.bmiColors[1] = {};
