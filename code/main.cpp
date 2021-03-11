@@ -156,15 +156,15 @@ void mstrcat(char* destination, const char* source)
 					{
 						int DestX = (WindowWidth  - DestWidth)  / 2; 
 						int DestY = (WindowHeight - DestHeight) / 2; 
-						Result = StretchDIBits(PaintStruct.hdc, 		// Device context for painting
-												DestX, DestY,   		            // X and Y position of the destination
-												DestWidth, DestHeight,        	// Height and Width of the destination
-												0, 0, 					                // X and Y position of the source (should always be 0 to paint everything)
-												ImgWidth, ImgHeight,          	// Width and Height of the source
-												ImagePixels, 		               	// A pointer to the array of pixels
-												&DIB,					                  // A BITMAPINFO structure that contains data about the image
-												DIB_RGB_COLORS, 	            	// Specifies that the image contains RGB (Actually BGR) values
-												SRCCOPY);				                // Specifies that the source should be directly copied to the destination
+						Result = StretchDIBits(PaintStruct.hdc, 	// Device context for painting
+						DestX, DestY,   		            	// X and Y position of the destination
+						DestWidth, DestHeight,        			// Height and Width of the destination
+						0, 0, 					       	// X and Y position of the source (should always be 0 to paint everything)
+						ImgWidth, ImgHeight,          			// Width and Height of the source
+						ImagePixels, 		               		// A pointer to the array of pixels
+						&DIB,					        // A BITMAPINFO structure that contains data about the image
+						DIB_RGB_COLORS, 	            		// Specifies that the image contains RGB (Actually BGR) values
+						SRCCOPY);				        // Specifies that the source should be directly copied to the destination
 					}
 				}
 				EndPaint(Window, &PaintStruct);
