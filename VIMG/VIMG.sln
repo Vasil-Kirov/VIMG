@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{911E67C6-3D85-4FCE-B560-20A9C3E3FF48}") = "VIMG", "VIMG.exe", "{0F5782BC-096F-4726-B11A-7ECE5F021E8A}"
+	ProjectSection(DebuggerProjectSystem) = preProject
+		PortSupplier = 00000000-0000-0000-0000-000000000000
+		Executable = E:\C_Projects\ImageViewer\VIMG\VIMG.exe
+		RemoteMachine = DESKTOP-PL0O08U
+		StartingDirectory = E:\C_Projects\ImageViewer\data
+		Arguments = E:\C_Projects\ImageViewer\VIMG\VIMG.exe E:\C_Projects\ImageViewer\testing.jpg
+		Environment = Default
+		LaunchingEngine = 00000000-0000-0000-0000-000000000000
+		UseLegacyDebugEngines = No
+		LaunchSQLEngine = No
+		AttachLaunchAction = No
+		IORedirection = Auto
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F5782BC-096F-4726-B11A-7ECE5F021E8A}.Release|x64.ActiveCfg = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3FEE2A87-3A04-414C-A830-7CC82E30C9F6}
+	EndGlobalSection
+EndGlobal

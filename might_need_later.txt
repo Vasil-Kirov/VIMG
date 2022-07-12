@@ -1,0 +1,20 @@
+	
+	//SetDIBits(PaintStruct.hdc, PaintBitmap, 0, DestHeight, ResizedPixels, &DIB, DIB_RGB_COLORS);
+	
+	
+	/*Result = StretchDIBits(PaintStruct.hdc, 		// Device context for painting
+								DestX, DestY,   		// X and Y position of the destination
+								DestWidth, DestHeight, 	// Height and Width of the destination
+								0, 0, 					// X and Y position of the source (should always be 0 to paint everything)
+								DestWidth, DestHeight, 	// Width and Height of the source
+								ResizedPixels, 			// A pointer to the array of pixels
+								&DIB,					// A BITMAPINFO structure that contains data about the image
+								DIB_RGB_COLORS, 		// Specifies that the image contains RGB (Actually BGR) values
+								SRCCOPY);				// Specifies that the source should be directly copied to the destination
+	*/
+	
+	
+
+	//HBITMAP PaintBitmap = CreateCompatibleBitmap(PaintStruct.hdc, DestWidth, DestHeight);
+	
+	//PaintBitMap = CreateDIBSection(PaintStruct.hdc, &DIB, DIB_RGB_COLORS, DIBptr, NULL, 0);
